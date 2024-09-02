@@ -1,0 +1,79 @@
+# Alacritty Configuration - Terminal Emulator
+# This file defines the configuration for the Alacritty terminal emulator.
+
+# Imports an external theme into Alacritty.
+# Here, the "catppuccin_mocha" theme is imported from the specified path.
+import = [
+    "~/.config/alacritty/themes/themes/catppuccin_mocha.toml"
+]
+
+# Specifies the default shell to be used by Alacritty.
+# The commented lines indicate that Zsh was considered, but Bash is the active shell.
+# shell = "/bin/zsh"
+shell = "/bin/bash"
+
+# Shell configuration.
+# Sets Tmux as the default shell to be launched when Alacritty starts.
+# This allows users to manage multiple terminal sessions within a single Alacritty window.
+#[shell]
+#program = "/usr/bin/tmux"  # Path to Tmux. Use `which tmux` to find this path.
+
+# Sets an environment variable for the terminal.
+# TERM is set to "alacritty," indicating to programs that the terminal in use is Alacritty.
+[env]
+TERM="alacritty"
+
+# Font settings for the terminal.
+# The default font is "CodeNewRoman Nerd Font Mono" with a size of 12.0.
+[font]
+size = 12.0
+
+# Configures the bold font.
+# "CodeNewRoman Nerd Font Mono" is used with the "Bold" style.
+[font.bold]
+family = "CodeNewRoman Nerd Font Mono"
+style = "Bold"
+
+# Italic font configuration.
+# "CodeNewRoman Nerd Font Mono" is used with the "Italic" style.
+[font.italic]
+family = "CodeNewRoman Nerd Font Mono"
+style = "Italic"
+
+# Normal (default) font configuration.
+# "CodeNewRoman Nerd Font Mono" is used with the "Regular" style.
+[font.normal]
+family = "CodeNewRoman Nerd Font Mono"
+style = "Regular"
+
+# Defines a small adjustment in the font offset.
+# Moves the font 0 units in the x-direction and 1 unit in the y-direction.
+[font.offset]
+x = 0
+y = 1
+
+# Window settings for the terminal.
+# Includes full window decorations, 95% opacity, and a static title "Alacritty."
+# Also enables dynamic padding and sets the default window dimensions.
+[window]
+    decorations = "Full"  # Window with all decorations (border, title, etc.)
+    opacity = 0.95  # Window opacity (95% visible)
+    dynamic_title = false  # The window title does not change dynamically
+    decorations_theme_variant = "Dark"  # Dark theme applied to the decorations
+    class = { instance="Alacritty", general="Alacritty"}  # Defines the window class for window managers
+    dynamic_padding = true  # Enables dynamic padding (changes with window size)
+    title = "Alacritty"  # Fixed window title
+    dimensions = { columns = 128, lines = 38 }  # Initial window dimensions
+    padding = { x = 5, y = 3}  # Window padding in x and y
+
+# Selection settings.
+# Automatically saves text selected in the terminal to the clipboard.
+[selection]
+    save_to_clipboard=true
+
+# Cursor settings.
+# Sets the cursor style to "Beam" (vertical bar) with constant blinking.
+# The cursor blink interval is set to 450 ms.
+[cursor]
+    style={shape="Beam", blinking="Always"}  # Cursor style
+    blink_interval=450  # Blink interval in milliseconds
