@@ -3,14 +3,11 @@
 
 # Imports an external theme into Alacritty.
 # Here, the "catppuccin_mocha" theme is imported from the specified path.
+[general]
+
 import = [
     "~/.config/alacritty/themes/themes/catppuccin_mocha.toml"
 ]
-
-# Specifies the default shell to be used by Alacritty.
-# The commented lines indicate that Zsh was considered, but Bash is the active shell.
-# shell = "/bin/zsh"
-shell = "/bin/bash"
 
 # Shell configuration.
 # Sets Tmux as the default shell to be launched when Alacritty starts.
